@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuBlog</title>
+    <link rel="stylesheet" href="app/View/style.css">
+    <script src="app/View/script.js"></script>
+</head>
+
+<body class="corpo" onload="fundo()">
+    <header>
+        <div class="logo">
+            <h1 style="color: white;">MeuBlog</h1>
+        </div>
+        <menu>
+            <ul>
+                <li><a href="?page=home">Home</a></li>
+                <li><a href="?page=sobre">Sobre</a></li>
+                <li><a href="?page=admin">Admin</a></li>
+                <li>
+                    <button type="button" id="mode" onclick="muda()">
+                        <img src="app/View/img/icons/sun-moon.png" alt="" class="mini-icon">
+                    </button>
+                </li>
+            </ul>
+        </menu>
+    </header>
+    </menu>
+    </header>
+    <main class="container">
+        <section class="conteudo">
+            {{area_dinamica}}
+        </section>
+    </main>
+</body>
+
+</html>

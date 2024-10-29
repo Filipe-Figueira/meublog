@@ -1,0 +1,291 @@
+:root {
+    --cor1: #41045e;
+    --cor2: #8b00cc;
+    --cor3: #b88dff;
+    --cor4: #842cd6;
+    --vidro1:#d1d1d188; 
+    -vidro2: #ffffff46;
+}
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+hr { 
+     background-color: rgb(231, 225, 225);
+     border: none; 
+     width: 80%; 
+     height: 2px; 
+     margin: 6px 0px; }
+a {
+    color: var(--cor4);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+button:focus {
+    border: none;
+    outline: none;
+}
+input {
+    border: none;
+    box-shadow: 1px 1px 2px #2222224b;
+}
+input, textarea:focus {
+    outline: none;
+    background-color: transparent;
+    box-shadow: 1px 1px 3px #a452f06c;
+}
+input[type="submit"], button[type="submit"] {
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    text-indent: 4px;
+    font-weight: lighter;
+    background-color: var(--cor2);
+    color: white;
+}
+input[type="submit"], button[type="submit"]:hover {
+    background-color: var(--cor1);
+    transition-duration:.3s;
+}
+h1 {
+    font-size: 2.3rem;
+}
+h1, h2, h3 {
+    color: var(--cor2);
+}
+p {
+    text-indent: 15px;
+    text-align: justify;
+    width: 90%;
+}
+.btn {
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 6px;
+    background-color: var(--cor2);
+    border-radius: 5px;
+    color: white;
+    border: 2px solid var(--cor2);
+    transition: .3s;
+}
+.btn:hover {
+    background-color: transparent;
+    color: var(--cor2);
+    text-decoration: none;
+}
+
+.mini-icon {
+    width: 45px;
+}
+.middle-icon {
+    width: 60px;
+}
+.big-icon {
+    width: 120px;
+}
+.logout {
+  border: 2px dashed var(--cor2);
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+}
+.corpo {
+    background-image: linear-gradient(30deg, var(--cor2), var(--cor3));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+header {
+    width: 100%;
+    padding: 10px 5%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+header menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+header menu ul li a {
+    font-size: 1.1rem;
+    color: white;
+}
+
+section.banner {
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/img/global-connectivity-illustrated-stockcake.jpg');
+}
+
+.container {
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.253);
+    width: 80%;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+}
+
+.black {
+    background-color: #222222;
+    color: white;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 12px;
+}
+
+.caixa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    border: 2px solid var(--cor4);
+    border-radius: 20px;
+    width: 65%;
+    padding: 10px;
+}
+.caixa a {
+    color: var(--cor2);
+}
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    padding: 10% 4%;
+}
+ form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+ form .campo-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+ form .campo-input input[type='text'], input[type='password'] {
+    background-color: transparent;
+    border: 2px solid var(--cor2);
+    border-radius: 15px ;
+    padding: 15px;
+    text-indent: 4px;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.login-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 50%;
+    align-items: center;
+    padding: 10px;
+}
+.login-imagem {
+    margin-right: 20px;
+    width: 50%;
+    height: 50vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('img/global-connectivity-illustrated-stockcake.jpg');
+}
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.comentarios p {
+    max-width: 500px;
+    text-align: justify;
+}
+.create-container {
+    display: flex;
+}
+.create-container form {
+    display: flex;
+    align-items: first baseline;
+    flex-direction: column;
+}
+.create-container form textarea, input[type="text"] {
+    border: none;
+    border-radius: 15px;
+    border: 2px solid var(--cor2);
+    background-color: transparent;
+    color: inherit;
+    padding: 10px;
+    width: 50%;
+}
+.create-container form textarea {
+    width: 50vw;
+}
+.create-container form input[type="text"] {
+    width: 50%;
+}
+
+.tabela {
+    border-collapse: collapse;
+    margin: 20px 10px;
+    width: 100%;
+    box-shadow: 3px 3px 4px #05050523;
+}
+.tabela thead {
+    background-color: var(--cor2);
+    color: white;
+    text-align: left;
+    vertical-align: middle;
+    height: 50px;
+}
+.tabela th, tr {
+    border-collapse: separate;
+    padding: 5px;
+    text-indent: 10px;
+    border-radius: 4px 4px 0px 0px;
+}
+.tabela td {
+    padding: 12px 2px;
+    vertical-align: middle;
+    border-bottom: 2px solid var(--cor2);
+}

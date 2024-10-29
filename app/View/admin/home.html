@@ -1,0 +1,32 @@
+<h1>Módulo Admin</h1>
+<h2>Postagens</h2>
+<section>
+    <table class="tabela">
+        <thead>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Data</th>
+            <th>Ações</th>
+        </thead>
+        <tbody>
+            {% for postagem in postagens%}
+            <tr>
+                <td>{{postagem.idPostagem}}</td>
+                <td><a href="?page=post&id={{postagem.idPostagem}}">{{postagem.titulo}}</a></td>
+                <td>{{postagem.dataPostagem}}</td>
+                <td>
+                    <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/pen-to-square.svg" title="Editar" class="mini-icon"></a>
+                    <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.svg" title="Excluír" class="mini-icon"></a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="?page=admin&metodo=create" class="btn">Criar novo post</a>
+</section>
+<a href="?page=admin&metodo=logout">Sair</a>
+
+
+
+<a href="index.html"><a href="create.html" class="logout"><img src="app/View/img/icons/person-walking-arrow-right.svg" title="Terminar Sessão" class="mini-icon"></a>
