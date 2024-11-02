@@ -11,16 +11,26 @@ class PostController {
         $parametros['conteudo'] = $postagem->getConteudo();
         $parametros['dataPostagem'] = $postagem->getDataPostagem();
 
-        //Recuperar os Comentários
         $comentario = new Comentario();
+        //Inserindo Comentários
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'):
+            if (isset($_POST['nome']) and isset($_POST['mensagem'])):
+                $nome = $_POST['nome'];
+                $mensagem = $_POST['mensagem'];
+                $comentario->setNome($nome);
+                $comentario->setMensagem($mensagem);
+                $comentario->insertComent($param);
+            endif;
+        endif;
+        //Recuperar os Comentários do Banco
         if ($comentario->listarComentarios($param)):
             $parametros['comentarios'] = $comentario->listarComentarios($param);
         else:
-            $parametros['sc'] = 3;
+            $parametros['comentarios'] = false;
         endif;
 
        $conteudo = renderizar("app/View/", "single.html", $parametros);
         echo $conteudo;
-    }
+     }
 }
 ?>

@@ -6,6 +6,14 @@
     --vidro1:#d1d1d188; 
     -vidro2: #ffffff46;
 }
+.dark {
+    background-color: #222222;
+    color: white;
+}
+.data {
+    color: var(--cor1);
+    background-color: #842cd642;
+    text-align: right;}
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
@@ -54,7 +62,7 @@ input[type="submit"], button[type="submit"] {
     background-color: var(--cor2);
     color: white;
 }
-input[type="submit"], button[type="submit"]:hover {
+input[type="submit"]:hover , button[type="submit"]:hover {
     background-color: var(--cor1);
     transition-duration:.3s;
 }
@@ -65,9 +73,10 @@ h1, h2, h3 {
     color: var(--cor2);
 }
 p {
-    text-indent: 15px;
     text-align: justify;
     width: 90%;
+    line-height: 1.8rem;
+    padding-left: 10px;
 }
 .btn {
     font-size: 13px;
@@ -158,11 +167,6 @@ section.banner {
     border-radius: 10px;
     padding: 20px 40px;
     margin-bottom: 20px;
-}
-
-.black {
-    background-color: #222222;
-    color: white;
 }
 
 .cards {
@@ -277,6 +281,7 @@ section.banner {
     text-align: left;
     vertical-align: middle;
     height: 50px;
+    text-transform: uppercase;
 }
 .tabela th, tr {
     border-collapse: separate;

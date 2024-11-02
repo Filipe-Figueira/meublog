@@ -48,7 +48,7 @@ class Postagem {
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(":TITULO", $this->getTitulo());
         $stmt->bindValue(":CONTEUDO", $this->getConteudo());
-        $stmt->execute();
+        $res = $stmt->execute();
         $sql = "SELECT * FROM postagem ORDER BY idPostagem DESC;";
         $st = $conn->prepare($sql);
         $st->execute();
@@ -58,7 +58,11 @@ class Postagem {
             $res = $dados[0];
         }
         $this->setDados($res);
-
+        if ($res == false):
+            throw new Exception("Falha na inserção");
+            return false;
+        endif;
+        
         return $res;
     }
     public static function selectAllPosts(){
@@ -98,7 +102,7 @@ class Postagem {
     }
     public function deletePost($idPost){
         $conn = Conexao::getConn();
-        $sql = "DELETE FROM postagem WHERE idPostagem = :ID";
+        $sql = " DELETE FROM comentario WHERE idPostagem :ID; DELETE FROM postagem WHERE idPostagem = :ID";
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(":ID", $idPost, PDO::PARAM_INT);
         $stmt->execute();

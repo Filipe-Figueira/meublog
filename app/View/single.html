@@ -1,6 +1,6 @@
 <h1>{{titulo}}</h1>
 <p>{{conteudo}}</p>
-<p>Data: {{dataPostagem}}</p>
+<span class="data">Data: {{dataPostagem}}</span>
 <hr>
 
 <article class="comentarios">
@@ -10,16 +10,16 @@
     <h3>{{comentario.nome}}</h3>
     <p>{{comentario.mensagem}}</p>
     {% endfor %}
-    {% if sc == 3%}
+    {% if comentarios == false %}
         <p>Sem comentários</p>
     {% endif %}
 </article>
 <h2>Deixe um comentário</h2>
 <section class="create-container">
-    <form action="">
+    <form action="" method="post">
         <input type="text" placeholder="Seu nome" name="nome">
-        <textarea name="" id="" rows="10" placeholder="Deixe sua mensagem"></textarea>
-        <input type="submit" value="Postar">
+        <textarea name="mensagem" rows="10" placeholder="Deixe sua mensagem"></textarea>
+        <input type="submit" value="Comentar">
         </div>
     </form>
 </section>

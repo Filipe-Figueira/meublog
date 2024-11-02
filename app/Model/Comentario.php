@@ -35,7 +35,6 @@ class Comentario {
         $this->setNome($dados['nome']);
         $this->setMensagem($dados['mensagem']);
         $this->setIdpostagem($dados['idPostagem']);
-      //  $this->setDataComentario(new DateTime($dados['dataPostagem']));
     }
 
     public function listarComentarios($idComent) {
@@ -48,9 +47,10 @@ class Comentario {
         return $res;
     }
 
-    public function insertPost($idPost){
+    public function insertComent($idPost){
+        $idPost = (Integer) $idPost;
         $conn = Conexao::getConn();
-        $sql = "INSERT INTO comentario(nome, mensagem) VALUES (:TITULO, :CONTEUDO); WHERE idPostagem = :ID";
+        $sql = "INSERT INTO comentario(nome, mensagem, idPostagem) VALUES (:TITULO, :CONTEUDO, :ID)";
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(':ID', $idPost);
         $stmt->bindValue(":TITULO", $this->getNome());

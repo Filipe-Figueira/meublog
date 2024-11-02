@@ -24,12 +24,6 @@ class AdminController {
     }
 
     public function create() {
-        $dir = "app/View/admin/";
-        $file = "create.html";
-        $parametros = array();
-        $conteudo = renderizar($dir, $file, $parametros);
-        echo $conteudo;
-
         if (isset($_POST['titulo']) and isset($_POST['conteudo'])):
             $postagem = new Postagem();
             $postagem->setTitulo($_POST['titulo']);
@@ -38,21 +32,30 @@ class AdminController {
             $id= $postagem->getIdpostagem();
             header("Location: ?page=post&id=$id");
         endif;
+        $dir = "app/View/admin/";
+        $file = "create.html";
+        $parametros = array();
+        $conteudo = renderizar($dir, $file, $parametros);
+        echo $conteudo;
+
     }
     
     public function update($params) {
-
         $postagem = new Postagem();
         $postagem->selectById($params);
+        $id = $postagem->getIdpostagem();
+        
         if (isset($_POST['titulo']) and isset($_POST['conteudo'])):
             $postagem->setTitulo($_POST['titulo']);
             $postagem->setConteudo($_POST['conteudo']);
+            $postagem->updatePost($id);
+            header("Location: ?page=admin");
         endif;
 
         $parametros = array();
         $parametros['titulo'] = $postagem->getTitulo();
         $parametros['conteudo'] = $postagem->getConteudo();
-        $postagem->updatePost($params);
+        
 
         $conteudo = renderizar("app/View/admin/", "update.html", $parametros);
         echo $conteudo;
