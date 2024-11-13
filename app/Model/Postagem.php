@@ -102,7 +102,7 @@ class Postagem {
     }
     public function deletePost($idPost){
         $conn = Conexao::getConn();
-        $sql = " DELETE FROM comentario WHERE idPostagem :ID; DELETE FROM postagem WHERE idPostagem = :ID";
+        $sql = "CALL delete_post_and_coments(:ID);";
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(":ID", $idPost, PDO::PARAM_INT);
         $stmt->execute();

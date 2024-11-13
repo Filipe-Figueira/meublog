@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -10,7 +9,7 @@
     <script src="app/View/script.js"></script>
 </head>
 
-<body class="corpo" onload="fundo()">
+<body class="corpo">
     <header>
         <div class="logo">
             <h1 style="color: white;">MeuBlog</h1>
@@ -21,7 +20,7 @@
                 <li><a href="?page=sobre">Sobre</a></li>
                 <li><a href="?page=admin">Admin</a></li>
                 <li>
-                    <button type="button" id="mode" onclick="muda()">
+                    <button type="button" id="mode">
                         <img src="app/View/img/icons/sun-moon.png" alt="" class="mini-icon">
                     </button>
                 </li>
@@ -31,7 +30,7 @@
     </menu>
     </header>
     <main class="container">
-        <section class="conteudo">
+        <section class="conteudo" id="conteudo">
             {{area_dinamica}}
         </section>
     </main>

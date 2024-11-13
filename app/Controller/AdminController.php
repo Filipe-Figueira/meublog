@@ -66,7 +66,5 @@ class AdminController {
         $postagem->deletePost($params);
         header("Location: ?page=admin");
     }
-
-
 }
 ?>

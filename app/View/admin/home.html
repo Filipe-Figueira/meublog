@@ -1,6 +1,7 @@
 <h1>Módulo Admin</h1>
 <h2>Postagens</h2>
 <section>
+    <a href="?page=admin&metodo=create" class="btn">Novo post</a>
     <table class="tabela">
         <thead>
             <th>ID</th>
@@ -16,14 +17,13 @@
                 <td>{{postagem.dataPostagem}}</td>
                 <td>
                     <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/pen-to-square.svg" title="Editar" class="mini-icon"></a>
-                    <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.svg" title="Excluír" class="mini-icon"></a>
+                    <a href="?page=admin&metodo=delete&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.svg" title="Excluír" class="mini-icon"></a>
 
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="?page=admin&metodo=create" class="btn">Criar novo post</a>
 </section>
 <a href="?page=admin&metodo=logout">Sair</a>
 

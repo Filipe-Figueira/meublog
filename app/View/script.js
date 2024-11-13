@@ -17,7 +17,7 @@ function fundo() {
      //   header.classList.add('dark-glass')
     }/
 }*/
-var content = document.querySelector('.conteudo');
+var content = document.getElementById('conteudo');
 function setTheme(theme) {
     content.classList.remove("light", "dark");
     content.classList.add(theme);
@@ -39,4 +39,4 @@ function loadTheme() {
     }
   }
 // Carregar o tema ao abrir a página
-document.addEventListener('DOMContentLoaded', loadTheme);
+document.addEventListener('DOMContentLoaded', loadTheme);z
