@@ -14,7 +14,10 @@
 .data {
     color: var(--cor1);
     background-color: #842cd642;
-    text-align: right;}
+    text-align: right;
+    border-radius: 3px;
+    padding: 3px;
+}
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
@@ -93,15 +96,13 @@ p {
     text-decoration: none;
     border: none;
     padding: 6px;
-    background-color: var(--cor2);
     border-radius: 5px;
-    color: white;
     border: 2px solid var(--cor2);
-    transition: .3s;
+    transition: all ease-in-out .3s;
 }
 .btn:hover {
-    background-color: transparent;
-    color: var(--cor2);
+    color: white;
+    background-color: var(--cor2);
     text-decoration: none;
 }
 

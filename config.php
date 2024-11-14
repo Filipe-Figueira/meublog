@@ -11,7 +11,7 @@ function validar(){
 function renderizar($diretorio, $arquivo, $dados = array()) {
     /**
      * @author Filipe Figueira
-     * Esta função foi criada para ajudar a separar o Front-end(HTML) do Back-end(PHP) ela recebe três parâmetros:
+     * Esta função foi criada para ajudar a separar o Front-end(HTML) do Back-end(PHP) usando o "Twig Template", ela recebe três parâmetros:
      * $diretorio -> A pasta que contém nossos arquivos HTML
      * $arquivo -> O arquivo que deve ser carregado
      * $dados[] -> O array que contém os dados a serem apresentados 
@@ -24,4 +24,14 @@ function renderizar($diretorio, $arquivo, $dados = array()) {
     return $conteudo;
 }
 
+function resumirTexto(string $texto, int $limite, string $continue = '...'): string {
+        $textoLimpo = trim(strip_tags($texto));
+
+        if (mb_strlen($textoLimpo) <= $limite) {
+            return $textoLimpo;
+        }
+        $resumirTexto = mb_substr($textoLimpo, 0, mb_strrpos(mb_substr($textoLimpo, 0, $limite), ''));
+
+        return $resumirTexto . $continue;
+    }
 ?>

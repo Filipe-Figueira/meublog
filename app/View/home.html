@@ -3,7 +3,8 @@
     {% for postagem in postagens%}
         <article class="caixa">
             <h2><a href="?page=post&id={{postagem.idPostagem}}">{{postagem.titulo}}</a></h2>
-            <p>{postagem.conteudo}</p>
+            <p>{{postagem.conteudo}}</p>
+            <!--<p>{{resumirTexto(postagem.conteudo, 5)}}</p>-->
         </article>
     {% endfor %} 
 </section>
