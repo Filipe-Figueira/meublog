@@ -1,7 +1,12 @@
 <h1>Módulo Admin</h1>
 <h2>Postagens</h2>
 <section>
-    <a href="?page=admin&metodo=create" class="btn">Novo post</a>
+    <a href="?page=admin&metodo=create">
+        <div class="icon-container">
+            <img src="app/View/img/icons/plus-circle.png" class="mini-icon">
+            <span>Novo post</span>
+        </div>
+    </a>
     <table class="tabela">
         <thead>
             <th>ID</th>
@@ -16,17 +21,21 @@
                 <td><a href="?page=post&id={{postagem.idPostagem}}">{{postagem.titulo}}</a></td>
                 <td>{{postagem.dataPostagem}}</td>
                 <td>
-                    <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/pen-to-square.svg" title="Editar" class="mini-icon"></a>
-                    <a href="?page=admin&metodo=delete&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.svg" title="Excluír" class="mini-icon"></a>
+                    <div class="icon-container">
+                        <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/pen-to-square.png" title="Editar" class="mini-icon"></a>
+                        <a href="?page=admin&metodo=delete&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.png" title="Excluír" class="mini-icon"></a>
+                    </div>
 
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <a href="?page=admin&metodo=logout">
+        <div class="icon-container">
+            <img src="app/View/img/icons/door-open.png" class="mini-icon">
+            <span>Sair</span>
+        </div>
+    </a>
 </section>
-<a href="?page=admin&metodo=logout">Sair</a>
 
-
-
-<a href="index.html"><a href="create.html" class="logout"><img src="app/View/img/icons/person-walking-arrow-right.svg" title="Terminar Sessão" class="mini-icon"></a>

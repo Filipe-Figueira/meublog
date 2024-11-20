@@ -88,27 +88,28 @@ class Postagem {
             return $res;
         endif; 
     }
-    public function updatePost($idPost){
+    public function updatePost($idPost): bool{
         $conn = Conexao::getConn();
         $sql = "UPDATE postagem SET titulo = :TITULO, conteudo = :CONTEUDO WHERE idPostagem = :ID;";
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(":ID", $idPost, PDO::PARAM_INT);
         $stmt->bindValue(":TITULO", $this->getTitulo());
         $stmt->bindValue(":CONTEUDO", $this->getConteudo());
-        $stmt->execute();
-        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $res;
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
-    public function deletePost($idPost){
+    public function deletePost($idPost): bool{
         $conn = Conexao::getConn();
         $sql = "CALL delete_post_and_coments(:ID);";
         $stmt= $conn->prepare($sql);
         $stmt->bindValue(":ID", $idPost, PDO::PARAM_INT);
-        $stmt->execute();
-        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $res;
+        if($stmt->execute()) {
+            return true;
+        }
+        return false;
+       
     }
     
 }
