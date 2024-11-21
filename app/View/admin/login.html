@@ -6,6 +6,9 @@
     <article class="login-formulario">
         <img src="app/View/img/icons/user-white.png" alt="" class="big-icon">
         <form action="" method="post">
+            {% if erros != 0 %}
+                <li>{{erros}}</li>
+            {% endif %}
             <div class="campo-input">
                 <img src="app/View/img/icons/user.png" alt="" class="mini-icon">
                 <input type="text" name="username" placeholder="Usuario">

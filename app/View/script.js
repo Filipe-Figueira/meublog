@@ -13,52 +13,32 @@ function fundo() {
         corpo.classList.add('dark')
     }
 }*/
-/*var content = document.getElementById('conteudo');
+// Função para aplicar o tema à seção conteudo
 function setTheme(theme) {
-    content.classList.remove("light", "dark");
-    content.classList.add(theme);
-    localStorage.setItem('theme', theme);
+  const content = document.getElementById('conteudo');
+  if (content) {
+      content.classList.remove("light", "dark");
+      content.classList.add(theme);
+      localStorage.setItem('theme', theme);
   }
+}
 
-let btnToggleTheme = document.getElementById('mode').addEventListener('click', function () {
-    const isDark = content.classList.contains("dark");
-    setTheme(isDark ?  "light": "dark");
-});
+// Função para alternar o tema ao clicar no botão
+function toggleTheme() {
+  const content = document.getElementById('conteudo');
+  const currentTheme = content.classList.contains("dark") ? "dark" : "light";
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  setTheme(newTheme);
+}
 
 // Função para carregar o tema ao abrir a página
 function loadTheme() {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else {
-      setTheme("dark"); // Tema padrão
-    }
-  }
-// Carregar o tema ao abrir a página
-document.addEventListener('DOMContentLoaded', loadTheme);*/
-
-var content = document.querySelector('.conteudo');
-function setTheme(theme) {
-  content.classList.remove("light", "dark");
-  content.classList.add(theme);
-  localStorage.setItem('theme', theme);
+  const storedTheme = localStorage.getItem('theme') || "dark"; // Define dark como padrão
+  setTheme(storedTheme);
 }
-let btnToggleTheme;
-btnToggleTheme = document.getElementById('mode');
 
-btnToggleTheme.addEventListener('click', function () {
-  const isDark = content.classList.contains("dark");
-  setTheme(isDark ? "light" : "dark");
+// Evento para carregar o tema quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', function () {
+  loadTheme(); // Carrega o tema armazenado
+  document.getElementById('mode').addEventListener('click', toggleTheme); // Adiciona o evento de clique
 });
-
-// Função para carregar o tema ao abrir a página
-function loadTheme() {
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    setTheme(storedTheme);
-  } else {
-    setTheme("dark"); // Tema padrão
-  }
-}
-// Carregar o tema ao abrir a página
-document.addEventListener('DOMContentLoaded', loadTheme);

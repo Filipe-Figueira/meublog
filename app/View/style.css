@@ -180,7 +180,6 @@ section.banner {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: #fff;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.253);
     width: 80%;
     min-height: 500px;
