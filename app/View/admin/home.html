@@ -3,7 +3,7 @@
 <section>
     <a href="?page=admin&metodo=create">
         <div class="icon-container">
-            <img src="app/View/img/icons/plus-circle.png" class="mini-icon">
+            <i class="fa fa-plus-circle mini-icon"></i>
             <span>Novo post</span>
         </div>
     </a>
@@ -22,8 +22,12 @@
                 <td>{{postagem.dataPostagem}}</td>
                 <td>
                     <div class="icon-container">
-                        <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}"><img src="app/View/img/icons/pen-to-square.png" title="Editar" class="mini-icon"></a>
-                        <a href="?page=admin&metodo=delete&id={{postagem.idPostagem}}"><img src="app/View/img/icons/trash.png" title="Excluír" class="mini-icon"></a>
+                        <a href="?page=admin&metodo=update&id={{postagem.idPostagem}}">
+                            <i class="fa-solid fa-pen-to-square mini-icon"></i>
+                        </a>
+                        <a href="?page=admin&metodo=delete&id={{postagem.idPostagem}}">
+                            <i class="fa-solid fa-trash-can mini-icon"></i>
+                        </a>
                     </div>
 
                 </td>
@@ -33,7 +37,7 @@
     </table>
     <a href="?page=admin&metodo=logout">
         <div class="icon-container">
-            <img src="app/View/img/icons/door-open.png" class="mini-icon">
+            <i class="fa fa-door-open mini-icon"></i>
             <span>Sair</span>
         </div>
     </a>

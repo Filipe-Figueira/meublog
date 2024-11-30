@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeuBlog</title>
     <link rel="stylesheet" href="app/View/style.css">
+    <link rel="stylesheet" href="app/View/img/icons/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="app/View/img/icons/bootstrap-icons/font/bootstrap-icons.min.css">
     <script src="app/View/script.js" defer></script>
 </head>
 
-<body class="corpo" onload="fundo()">
+<body class="corpo">
     <header>
         <div class="logo">
             <h1 style="color: white;">MeuBlog</h1>
@@ -20,9 +22,7 @@
                 <li><a href="?page=sobre">Sobre</a></li>
                 <li><a href="?page=admin">Admin</a></li>
                 <li>
-                    <button type="button" id="mode">
-                        <img src="app/View/img/icons/sun-moon.png" alt="" class="mini-icon">
-                    </button>
+                    <i class="fa-solid fa-sun mini-icon"  id="mode"></i>
                 </li>
             </ul>
         </menu>
@@ -30,8 +30,9 @@
     </menu>
     </header>
     <main class="container">
-        <section class="conteudo" id="conteudo">
+        <section class="conteudo light" id="conteudo">
             {{area_dinamica}}
+            
         </section>
     </main>
 </body>

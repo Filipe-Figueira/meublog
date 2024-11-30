@@ -1,7 +1,7 @@
 <?php 
     require_once "meuAutoload.php";
     require_once "vendor/autoload.php";
-    date_default_timezone_set("Europe/Paris");
+    date_default_timezone_set("Africa/Luanda");
 
     $template = file_get_contents('app/View/layout.html');
     ob_start();
