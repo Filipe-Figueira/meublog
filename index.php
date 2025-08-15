@@ -1,6 +1,5 @@
 <?php 
-    require_once "meuAutoload.php";
-    require_once "vendor/autoload.php";
+    require __DIR__ . '/vendor/autoload.php';
     date_default_timezone_set("Africa/Luanda");
 
     $template = file_get_contents('app/View/layout.html');
