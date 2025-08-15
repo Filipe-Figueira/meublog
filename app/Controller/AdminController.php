@@ -1,5 +1,6 @@
 <?php 
-require_once "C:/laragon/www/meublog/config.php";
+require __DIR__ . '/../../config.php';
+
 validar();
 
 class AdminController {
